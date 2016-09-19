@@ -18,21 +18,6 @@ const App = React.createClass({
     let editedMovie = movieDB.filter(movie => movie.id === id);
     editedMovie[0].rating = editedMovie[0].rating + 1;
     this.state.movieDB = movieDB.filter(movie => movie.id !== id)
-    
-    this.state.movieDB.sort(function (a, b) {
-        if (a.rating < b.rating) {
-          return 1;
-        }
-        if (a.rating > b.rating) {
-          return -1;
-        }
-        // a must be equal to b
-        return 0;
-});
-
-
-
-
     this.setState({
       movieDB: [...movieDB]
     })
